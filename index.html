@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أحمد محمد - مهندس ميكاترونكس | مطور رؤية حاسوبية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* الهيدر */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin: 0 auto 1rem;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .title {
+            font-size: 1.2rem;
+            color: var(--light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* الأقسام */
+        section {
+            padding: 3rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+        
+        /* المهارات */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .skill-category h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        /* المشاريع */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-img {
+            height: 200px;
+            background: linear-gradient(45deg, #3498db, #2c3e50);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .tech-tag {
+            background-color: #e0f7fa;
+            color: #00796b;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        
+        /* الأبحاث */
+        .research-list {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .research-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .research-item:last-child {
+            border-bottom: none;
+        }
+        
+        .research-link {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 0.5rem;
+            transition: background-color 0.3s;
+        }
+        
+        .research-link:hover {
+            background-color: var(--secondary);
+        }
+        
+        /* الفوتر */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary);
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-3px);
+        }
+        
+        /* التجاوبية */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الهيدر -->
+    <header>
+        <div class="header-content">
+            <div class="profile-img">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <h1>أحمد محمد</h1>
+            <p class="title">مهندس ميكاترونكس | مطور رؤية حاسوبية | باحث</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>ahmed@example.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+123 456 7890</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>دمشق، سوريا</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- المهارات -->
+    <section id="skills">
+        <h2><i class="fas fa-cogs"></i> المهارات التقنية</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>الرؤية الحاسوبية & الذكاء الاصطناعي</h3>
+                <ul class="skill-list">
+                    <li>OpenCV & MediaPipe</li>
+                    <li>YOLO Object Detection</li>
+                    <li>تصنيف الصور باستخدام CNN</li>
+                    <li>معالجة الصور الرقمية</li>
+                    <li>Python & TensorFlow/Keras</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>هندسة الميكاترونكس</h3>
+                <ul class="skill-list">
+                    <li>برمجة Arduino & Raspberry Pi</li>
+                    <li>أنظمة التحكم الآلي</li>
+                    <li>دمج أجهزة الاستشعار</li>
+                    <li>النمذجة باستخدام MATLAB/Simulink</li>
+                    <li>التصميم الميكانيكي الأساسي</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>البحث والتطوير</h3>
+                <ul class="skill-list">
+                    <li>النشر الأكاديمي (HAL Archives)</li>
+                    <li>تصميم التجارب</li>
+                    <li>تحليل البيانات الإحصائي</li>
+                    <li>كتابة الأوراق البحثية</li>
+                    <li>مراجعة الأقران</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- المشاريع -->
+    <section id="projects">
+        <h2><i class="fas fa-project-diagram"></i> المشاريع البارزة</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-industry"></i>
+                </div>
+                <div class="project-content">
+                    <h3>نظام فحص العبوات بالرؤية الحاسوبية</h3>
+                    <p>نظام تلقائي لكشف العيوب في خطوط الإنتاج باستخدام كاميرات متعددة وخوارزميات رؤية حاسوبية.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Arduino</span>
+                        <span class="tech-tag">YOLO</span>
+                    </div>
+                    <p><strong>النتائج:</strong> 98.7% دقة، توفير 65% تكاليف، زيادة 22% سرعة الإنتاج</p>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="project-content">
+                    <h3>أنظمة التحكم بالحركة</h3>
+                    <p>تطبيقات تفاعلية تعمل بالزمن الحقيقي تستخدم كشف الحركة والوضعية للتحكم في الأنظمة.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">MediaPipe</span>
+                        <span class="tech-tag">Pygame</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Real-time</span>
+                    </div>
+                    <p><strong>المميزات:</strong> تحليل الحركة، دعم متعدد اللاعبين، تسجيل تلقائي</p>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-football-ball"></i>
+                </div>
+                <div class="project-content">
+                    <h3>محاكاة رياضية بالذكاء الاصطناعي</h3>
+                    <p>محاكاة كرة القدم باستخدام كشف الأشياء والوكلاء الأذكياء لاتخاذ القرارات تلقائياً.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">YOLO</span>
+                        <span class="tech-tag">AI Agents</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Automation</span>
+                    </div>
+                    <p><strong>التقنية:</strong> وكلاء أذكياء، قرارات قائمة على القواعد، تفاعل آلي كامل</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الأبحاث -->
+    <section id="research">
+        <h2><i class="fas fa-flask"></i> الأبحاث المنشورة</h2>
+        <div class="research-list">
+            <div class="research-item">
+                <h3>نظام مراقبة الجودة باستخدام دمج المستشعرات والرؤية الحاسوبية</h3>
+                <p>بحث منشور في HAL Archives يركز على تحسين دقة كشف العيوب في خطوط الإنتاج من خلال دمج بيانات متعددة المصادر.</p>
+                <a href="https://hal.science/your-paper-link" class="research-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> عرض البحث على HAL
+                </a>
+            </div>
+            
+            <div class="research-item">
+                <h3>تحسين معاملات التعلم الآلي باستخدام Ant Colony Optimization</h3>
+                <p>دراسة حول استخدام خوارزميات التحسين الحشدية لاختيار المعاملات الأمثلية في نماذج التعلم العميق.</p>
+                <a href="https://hal.science/your-paper-link2" class="research-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> عرض البحث على HAL
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- التعليم والخبرة -->
+    <section id="education">
+        <h2><i class="fas fa-graduation-cap"></i> المؤهلات العلمية</h2>
+        <div class="research-list">
+            <div class="research-item">
+                <h3>دكتوراه (قيد الإنجاز)</h3>
+                <p>تطبيقات الذكاء الاصطناعي في الأمن والجيوبوليتيك</p>
+            </div>
+            
+            <div class="research-item">
+                <h3>بكالوريوس هندسة الميكاترونكس</h3>
+                <p>جامعة حلب - 2008 | </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- دعوة للعمل -->
+    <footer>
+        <h2>للتواصل والتعاون</h2>
+        <p>أبحث عن فرص للعمل على مشاريع مبتكرة في مجال الرؤية الحاسوبية، الأتمتة الصناعية، والأنظمة الذكية.</p>
+        
+        <div class="cta-buttons">
+            <a href="cv.pdf" class="btn btn-primary" download>
+                <i class="fas fa-download"></i> تحميل السيرة الذاتية
+            </a>
+            <a href="mailto:ahmed@example.com" class="btn btn-secondary">
+                <i class="fas fa-envelope"></i> تواصل معي
+            </a>
+        </div>
+        
+        <div style="margin-top: 2rem;">
+            <a href="https://github.com/username" style="color: white; margin: 0 1rem; font-size: 1.5rem;">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/username" style="color: white; margin: 0 1rem; font-size: 1.5rem;">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://hal.science/search/index?q=your-name" style="color: white; margin: 0 1rem; font-size: 1.5rem;">
+                <i class="fas fa-graduation-cap"></i>
+            </a>
+        </div>
+        
+        <p style="margin-top: 2rem; color: #bdc3c7;">
+            © 2024 أحمد محمد. جميع الحقوق محفوظة.
+        </p>
+    </footer>
+</body>
+</html>
